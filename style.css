@@ -1,0 +1,327 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*Task 1*/
+.conatnier{
+    background-color: rgb(237, 225, 151);
+    width: 500px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    padding-top: 10px;
+}
+
+
+.content{
+   
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    margin-left: 10px;
+    position: relative;
+    animation-duration: 4s;
+    animation-name: test;
+    animation-iteration-count: infinite;
+    
+}
+
+@keyframes test{
+    0%{
+        background-color: blue;
+        border-radius: 100px;
+        left: 0;
+        top: 0;
+    }
+
+    25%{
+        background-color: red;
+        border-radius: 0px;
+        left: 330px;
+        top: 0;
+    }
+
+    50%{
+        background-color: green;
+        border-radius: 100px;
+        left: 330px;
+        top: 330px;
+    }
+
+    75%{
+        background-color: chocolate;
+        border-radius: 0px;
+        left: 0;
+        top: 330px;
+    }
+
+    100%{
+        background-color: blue;
+        left: 0;
+        top: 0;
+    }
+}
+
+
+/*Task 2*/
+
+.loading-bar {
+    margin-top: 50px;
+    margin-left: 20px;
+    border: 1px solid black;
+    width: 100%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 50px;
+    width: 550px;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background-color: #3437db;
+    animation: progress-animation 4s ease-in-out infinite;
+}
+
+.progresss{
+    width: 0%;
+    height: 100%;
+    background-color: #3437db;
+    animation: progress-animation 3s ease-in-out infinite;
+}
+
+@keyframes progress-animation {
+    0% {
+        width: 20%;
+    }
+
+    25%{
+        width: 40%;
+    }
+
+    70% {
+        width: 60%;
+    }
+    100% {
+        width: 20%;
+    }
+}
+
+
+
+/*Task 3*/
+
+.aa {
+    background-color: black;
+    width: 500px;
+    height: 500px;
+    border: 8px solid;
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 25px;
+    padding-top: 250px;
+    border-radius: 20px;
+    animation-duration: 2s;
+    animation-name: borderRainbow;
+    animation-iteration-count: infinite;
+}
+
+@keyframes borderRainbow {
+    0% {
+        border-color: red;
+    }
+    16.67% {
+        border-color: orange;
+    }
+    33.33% {
+        border-color: yellow;
+    }
+    50% {
+        border-color: green;
+    }
+    66.67% {
+        border-color: blue;
+    }
+    83.33% {
+        border-color: indigo;
+    }
+    100% {
+        border-color: violet;
+    }
+}
+
+
+
+
+
+/*Task 4*/
+
+.conatniers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+h2{
+    cursor: pointer;
+}
+
+h2::before{
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: red;
+    transform: scale(0);
+    transform: translate(0px, 0px);
+    transition: all .5s ease;
+    transform: translate(0px ,0px);
+}
+
+h2::after{
+        content: "";
+        display: block;
+        height: 4px;
+        width: 100%;
+        background-color:black;
+        transform: scale(0);
+        transform: translate(0px ,0px);
+    
+}
+
+h2:hover::before{
+    transform: scale(1);
+    transform: translate(0px, 30px);
+}
+
+
+h2:hover::after{
+    transform: scale(2);
+    transform: translate(0px ,-30px);
+}
+
+/*Task 5*/
+
+.buttons{
+    border: none;
+    outline: none;
+    background-color: rgb(142, 207, 142);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    position: relative;
+    margin-top: 50px;
+}
+
+.buttons::before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border: 3px solid rgb(142, 207, 142);
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    transition: all 0.5s ease-in-out;
+}
+
+.buttons:hover::before{
+    top: -6px;
+    bottom: -6px;
+    left: -6px;
+    right: -6px;
+}
+
+
+
+/*Task 5*/
+
+.buttonss {
+    position: relative;
+    overflow: hidden;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: #3498db;
+    border: 2px solid #3498db;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.buttonss::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: #3498db;
+    transform: translate(-50%, -50%);
+    transition: width 2s ease, height 2s ease;
+    z-index: -1;
+}
+
+.buttonss:hover::before {
+    width: 200%;
+    height: 200%;
+}
+
+.buttonss:hover {
+    color: #fff;
+    border-color: #3498db;
+}
+
+
+/*Task 6*/
+
+
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: red;
+    width: 60%;
+    height: 50px;
+    margin: auto;
+    margin-bottom: 50px;
+    padding-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    padding-left: 50px;
+    position: relative;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.5s ease; 
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
